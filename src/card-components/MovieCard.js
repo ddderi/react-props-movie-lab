@@ -14,7 +14,7 @@ import CardFront from './CardFront.js';
 import CardBack from './CardBack.js';
 
 
-const posterMap = {
+export const posterMap = {
   'choux-maru-istanbul': cmi,
   'choux-maru-part-1': cmp1,
   'chromeboi': cb,
@@ -28,16 +28,20 @@ const posterMap = {
 }
 
 export default class MovieCard extends Component {
-
+  
   render() {
+    console.log(this.props.movie.poster+'.png')
     return (
       <div className="movie-card">
-        {/* which component should receive which props? */}
-        <CardFront />
-        <CardBack />
+      
+     
+        <CardFront movie={this.props.movie}/>
+        <CardBack movie={this.props.movie}/>
       </div>
     )
   }
 }
 
 // Don't forget your default props!
+
+
